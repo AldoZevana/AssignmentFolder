@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojonary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+        <div class="nav d-flex j-sb align-center">
+            <h1>Dojonary</h1>
+            <input type="text" placeholder="search">
+            <button type="submit" onclick="Change_Button(this)">Login</button>
+        </div>
+        <div class="d-flex flex-1 j-sb">
+            <div class="ninja-card d-flex j-sb">
+                <div class="d-flex j-sb align-center">
+                    <div class="flex-1 ">
+                        <h1>ninja</h1>
+                        <h4><em>noun</em></h4>
+                        <p>Plural: <i>ninjas</i></p>
+                        <button onclick="alert('Ninja was liked!')"> 13 likes</button>
+                    </div>
+                    <div class="flex-1">
+                        <p>A practitioner skilled in the
+                            <a href="#">Japanese </a>art of <a href="#">ninjutsu</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="ninja-card-2 flex-1">
+                <h3>Dojonary is </h3>
+                <h3>defined by<b> YOU</b></h3>
+                <button type="submit" onclick="hide(this)">Add Definition</button>
+
+            </div>
+        </div>
+        <div class="ninja-card d-flex j-sb">
+            <div class="d-flex j-sb align-center">
+                <div class="flex-1 ">
+                    <h1>ninja</h1>
+                    <h4><em>noun</em></h4>
+                    <p>Plural: <i>ninjas</i></p>
+                    <button onclick="alert('Ninja was liked!')"> 37 likes</button>
+                </div>
+                <div class="flex-1">
+                    <p>A<a href="#">programmer</a> who breaks</p>
+                    <p>down problems with <a href="#">zen</a>-like focus.</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <script src="likes.js"></script>
+
+</body>
+
+</html>

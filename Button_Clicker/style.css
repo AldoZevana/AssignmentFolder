@@ -1,0 +1,77 @@
+
+header{
+    width:40%;
+    margin-right: 70px;
+    margin-left:70px;
+}
+.nav{
+    background-color: gray;
+}
+.j-sb{
+    justify-content: space-between;
+}
+.align-center{
+    align-items:center;
+}
+h1{
+    margin-left:30px;
+}
+h4{
+    margin-left:30px;
+}
+button{
+    background-color: blue;
+    margin-right:30px;
+    margin-left:10px;
+    padding-left :10px;
+    padding-right :10px;
+    padding-bottom :5px;
+    padding-top:5px;
+    box-shadow: 3px 3px black;
+}
+.d-flex{
+    display:flex;
+}
+.flex-1{
+    flex:1;
+}
+.j-sa{
+    justify-content: space-around;
+}
+.ninja-card{
+    width:60%;
+    margin-top:20px;
+    border:2px solid black;
+}
+.ninja-card-2{
+    width:auto;
+    height: 70%;
+    margin-top:20px;
+    border:2px solid black;
+    padding-left:20px;
+    margin-left: 20px;
+}
+.ninja-card-2 button{
+    margin-bottom:10px;
+    background-color: green;
+    padding-left :10px;
+    padding-right :10px;
+    padding-bottom :5px;
+    padding-top:5px;
+    box-shadow: 3px 3px black;
+}
+.ninja-card p{
+    margin-left:30px;
+
+}
+.ninja-card button{
+    background-color: yellow;
+    margin-top:10px;
+    margin-left:30px;
+    margin-bottom: 20px;
+    padding-left :10px;
+    padding-right :10px;
+    padding-bottom :5px;
+    padding-top:5px;
+    box-shadow: 3px 3px black;
+}
