@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DojoWeather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="first-nav d-flex align-items j-sb">
+            <h1 class="flex-3">DojoWeather</h1>
+            <ul class="d-flex flex-1">
+                <li onclick="alert('Loading weather report')">Burbank</li>
+                <li onclick="alert('Loading weather report')">Chicago</li>
+                <li onclick="alert('Loading weather report')">Dallas</li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="second-nav d-flex align-items  j-sb">
+        <h2>San Jose</h2>
+            <div>
+                <label>show temperature in</label>
+                <select name="temperatures" onchange="redSpan1() ,redSpan2(),redSpan3(),redSpan4() ">
+                    <option value="C">C</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+        </div>
+        <div class="weather-cards d-flex align-items j-c">
+
+            <div>
+                <h2>Today</h2>
+                <img src="some_rain.png" alt="rain">
+                <p>some rain</p>
+                <div class="reports d-flex align-items j-c">
+                    <span id="red-1">24</span>
+                    <span id="blue-1">18</span>
+                </div>
+            </div>
+            <div>
+                <h2>Tomorrow</h2>
+                <img src="some_sun.png" alt="sun">
+                <p>some sun</p>
+                <div class="reports d-flex align-items j-c">
+                    <span id="red-2">27</span>
+                    <span id="blue-2">19</span>
+                </div>
+            </div>
+            <div>
+                <h2>Friday</h2>
+                <img src="some_clouds.png" alt="clouds">
+                <p>some clouds</p>
+                <div class="reports d-flex align-items j-c">
+                    <span id="red-3">21</span>
+                    <span id="blue-3">16</span>
+                </div>
+            </div>
+            <div>
+                <h2>Saturday</h2>
+                <img src="some_sun.png" alt="clouds">
+                <p>some sun</p>
+                <div class="d-flex align-items j-c">
+                    <span id="red-4">26</span>
+                    <span id="blue-4">21</span>
+                </div>
+            </div>
+        </div> 
+        <div class="cookie-card d-flex align-items j-c" id="cookie-card" >
+            <img src="cookie.png" alt="cookie">
+            <div>
+                <h3>Stop! Cookie time</h3>
+                <p>We use cookies(sadly not the edible ones) to personalize </p>
+                <p> content and ads, to provide social media features and to
+                analise our traffic. <a href="#">Read More...</a></p>
+            </div>
+            <button type="button" onclick="removeCookie()">I Accept</button>
+        </div>   
+    </main>
+    
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
