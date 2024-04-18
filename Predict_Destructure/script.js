@@ -14,7 +14,7 @@ const employee = {
 }
 const { name: otherName } = employee;
 //There will be an error because of the variable name not being difined.
-//console.log(name);
+console.log(name);
 console.log(otherName);
 
 //PROBLEM 3
