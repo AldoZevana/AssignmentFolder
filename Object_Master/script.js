@@ -23,10 +23,26 @@ const pokémon = Object.freeze([
         { "id": 146, "name": "Moltres",    "types": ["fire", "flying"] },
         { "id": 148, "name": "Dragonair",  "types": ["dragon"] }
     ]);
-    const pkmn_3Ids = pokémon.map(p => p.id%3==0);
-    console.log(pkmn_3Ids);
-    const pkmn_fire = pokémon.filter(p => p.types.includes==["fire"]);
-    console.log(pkmn_fire);
 
-
-    
+    const pokémonDivisibleBy3 = pokémon.filter(pokemon => pokemon.id % 3 === 0).map(pokemon => ({
+        id: pokemon.id,
+        name: pokemon.name,
+        types: pokemon.types
+    }));
+        console.log(pokémonDivisibleBy3);
+    const pokémonFireType = pokémon.filter(pokemon => pokemon.types.includes("fire"));
+        console.log(pokémonFireType);
+    const pokémonWithMultipleTypes = pokémon.filter(pokemon => pokemon.types.length > 1);
+        console.log(pokémonWithMultipleTypes);
+    const pokémonNames = pokémon.map(pokemon=>({
+        names:pokemon.name
+    }));
+        console.log(pokémonNames);
+    const pokémonGreat99 = pokémon.filter(pokemon => pokemon.id >99 );
+        console.log(pokémonGreat99);
+    const pokémonPoisonType = pokémon.filter(pokemon => pokemon.types==("poison"));
+        console.log(pokémonPoisonType);
+    const pokémonSecondFlying = pokémon.filter(pokemon => pokemon.types[1]==("flying"));
+        console.log(pokémonSecondFlying);
+    const pokémonCount = pokémon.filter(pokemon=> pokemon.types.includes("normal")).length;
+        console.log(pokémonCount);
