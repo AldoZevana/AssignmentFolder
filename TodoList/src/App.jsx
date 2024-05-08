@@ -6,7 +6,7 @@ function App() {
     const [stuff, setStuff] = useState([])
 
     return (
-        <div className="App">
+        <div >
             <Form stuff = {stuff} setStuff={setStuff} />
             <ShowList stuff = {stuff} setStuff={setStuff} />
         </div>
