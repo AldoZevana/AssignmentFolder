@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-image: linear-gradient(to right, black 45%, darkred);
+  color: antiquewhite;
+  text-align: center;
+}
+
+.buttin {
+  border: solid antiquewhite .1em;
+  border-radius: .5em;
+  background-image: linear-gradient(to right, darkred, black);
+  margin: 1em;
+  padding: 0em .5em 0em .5em;
+  font-size: 2em;
+}
+
+.fade {
+  color: rgba(250,235,215, 0.25);
+}
+
+.notFade {
+  color: antiquewhite;
+}
