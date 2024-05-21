@@ -1,0 +1,206 @@
+Microsoft Windows [Version 10.0.19045.4412]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\2SC>mongosh
+Current Mongosh Log ID: 664c89bfa55b14345946b798
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.5
+Using MongoDB:          7.0.9
+Using Mongosh:          2.2.5
+mongosh 2.2.6 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-05-18T20:39:13.349+02:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> use my_first_db
+switched to db my_first_db
+my_first_db> db.createCollection("students")
+{ ok: 1 }
+my_first_db> db.students.insert({name:"Andrea",home_state:"California",lucky_number:3,birthday:{month:04,day:03,year:2000}})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('664c8b64a55b14345946b799') }
+}
+my_first_db> db.students.insert({name:"Arthur",home_state:"Washington",lucky_number:7,birthday:{month:05,day:14,year:1998}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('664c8ba5a55b14345946b79a') }
+}
+my_first_db> db.students.insert({name:"Vanessa",home_state:"New York",lucky_number:9,birthday:{month:07,day:23,year:2000}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('664c8c2aa55b14345946b79b') }
+}
+my_first_db> db.students.insert({name:"Aldo",home_state:"Chicago",lucky_number:3,birthday:{month:04,day:03,year:2000}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('664c8c5aa55b14345946b79c') }
+}
+my_first_db> db.students.insert({name:"Eric",home_state:"Texas",lucky_number:10,birthday:{month:09,day:24,year:2000}})
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('664c8caba55b14345946b79d') }
+}
+my_first_db> db.students.find()
+[
+  {
+    _id: ObjectId('664c8b64a55b14345946b799'),
+    name: 'Andrea',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 4, day: 3, year: 2000 }
+  },
+  {
+    _id: ObjectId('664c8ba5a55b14345946b79a'),
+    name: 'Arthur',
+    home_state: 'Washington',
+    lucky_number: 7,
+    birthday: { month: 5, day: 14, year: 1998 }
+  },
+  {
+    _id: ObjectId('664c8c2aa55b14345946b79b'),
+    name: 'Vanessa',
+    home_state: 'New York',
+    lucky_number: 9,
+    birthday: { month: 7, day: 23, year: 2000 }
+  },
+  {
+    _id: ObjectId('664c8c5aa55b14345946b79c'),
+    name: 'Aldo',
+    home_state: 'Chicago',
+    lucky_number: 3,
+    birthday: { month: 4, day: 3, year: 2000 }
+  },
+  {
+    _id: ObjectId('664c8caba55b14345946b79d'),
+    name: 'Eric',
+    home_state: 'Texas',
+    lucky_number: 10,
+    birthday: { month: 9, day: 24, year: 2000 }
+  }
+]
+my_first_db> db.students.find({home_state:"California","Washington"})
+Uncaught:
+SyntaxError: Unexpected token (1:54)
+
+> 1 | db.students.find({home_state:"California","Washington"})
+    |                                                       ^
+  2 |
+
+my_first_db> db.students.find({home_state:"California"}
+... )
+[
+  {
+    _id: ObjectId('664c8b64a55b14345946b799'),
+    name: 'Andrea',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 4, day: 3, year: 2000 }
+  }
+]
+my_first_db> db.students.find({lucky_number:{$gt:3}})
+[
+  {
+    _id: ObjectId('664c8ba5a55b14345946b79a'),
+    name: 'Arthur',
+    home_state: 'Washington',
+    lucky_number: 7,
+    birthday: { month: 5, day: 14, year: 1998 }
+  },
+  {
+    _id: ObjectId('664c8c2aa55b14345946b79b'),
+    name: 'Vanessa',
+    home_state: 'New York',
+    lucky_number: 9,
+    birthday: { month: 7, day: 23, year: 2000 }
+  },
+  {
+    _id: ObjectId('664c8caba55b14345946b79d'),
+    name: 'Eric',
+    home_state: 'Texas',
+    lucky_number: 10,
+    birthday: { month: 9, day: 24, year: 2000 }
+  }
+]
+my_first_db> db.students.find({luckyNumber:{$gte:1,$lte:9}})
+
+my_first_db> db.students.find({luckyNumber:{$gt:1,$lt:9}})
+
+my_first_db> db.students.find({lucky_number:{$gt:1,$lt:9}})
+[
+  {
+    _id: ObjectId('664c8b64a55b14345946b799'),
+    name: 'Andrea',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 4, day: 3, year: 2000 }
+  },
+  {
+    _id: ObjectId('664c8ba5a55b14345946b79a'),
+    name: 'Arthur',
+    home_state: 'Washington',
+    lucky_number: 7,
+    birthday: { month: 5, day: 14, year: 1998 }
+  },
+  {
+    _id: ObjectId('664c8c5aa55b14345946b79c'),
+    name: 'Aldo',
+    home_state: 'Chicago',
+    lucky_number: 3,
+    birthday: { month: 4, day: 3, year: 2000 }
+  }
+]
+my_first_db> db.students.updateMany({},{$set:{interests:['coding','brunch','MongoDB']}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+my_first_db> db.students.updateOne({_id:ObjectId('664c8b64a55b14345946b799')},{$addToSet:{interests:'taxes'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.updateOne({_id:ObjectId('664c8ba5a55b1434596b79a')},{$addToSet:{interests:'Painting'}})
+BSONError: input must be a 24 character hex string, 12 byte Uint8Array, or an integer
+my_first_db> db.students.updateOne({_id:ObjectId('664c8ba5a55b14345946b79a')},{$addToSet:{interests:'Painting'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.updateOne({_id:ObjectId('664c8c5aa55b14345946b79c')},{$addToSet:{interests:'Working Out '}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.updateOne({_id:ObjectId('664c8c2aa55b14345946b79b')},{$addToSet:{interests:'Knitting'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+my_first_db> db.students.updateOne({_id:ObjectId('664c8caba55b14345946b79d')},{$addToSet:{interests:'Martial Arts'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
