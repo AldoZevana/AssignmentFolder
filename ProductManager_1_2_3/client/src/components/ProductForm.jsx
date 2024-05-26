@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import styles from "./Components.module.css"
 const ProductForm = () => {
     const [title,setTitle] = useState(""); 
     const [price,setPrice] = useState(0);
@@ -23,19 +24,19 @@ const ProductForm = () => {
     
     return (
         <form onSubmit={onSubmitHandler}>
-            <p>
+            <div className={styles.dFlex}>
                 <label>Title</label><br/>
-                <input type="text" onChange = {(e)=>setTitle(e.target.value)}/>
-            </p>
-            <p>
+                <input type="text" value={title} onChange = {(e)=>setTitle(e.target.value)}/>
+            </div>
+            <div className={styles.dFlex}>
                 <label>Price</label><br/>
-                <input type="number" onChange = {(e)=>setPrice(e.target.value)}/>
-            </p>
-            <p>
+                <input type="number" value={price} onChange = {(e)=>setPrice(e.target.value)}/>
+            </div>
+            <div className={styles.dFlex}>
                 <label>Description</label><br/>
-                <input type="text" onChange = {(e)=>setDescription(e.target.value)}/>
-            </p>
-            <input type="submit"/>
+                <input type="text" value={description} onChange = {(e)=>setDescription(e.target.value)}/>
+            </div>
+            <button type="submit">Create</button>
         </form>
     )
 }
