@@ -1,12 +1,26 @@
 import { useState } from 'react'
 import "./App.css"
-import ProductForm from './components/ProductForm'
+import Main from './components/Main'
+import { BrowserRouter,Routes,Route,Navigate } from 'react-router-dom'
+import Edit from'./views/Edit'
+import Product from'./views/Product'
+
+
 
 function App() {
-
+  const [list,setList]=useState([])
   return (
     <>
-    <ProductForm/>
+    
+    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/"  element={<Main list={list} setList={setList}/>}default/>
+        <Route path="/products/:id" element={<Product list={list} setList={setList}/>}/>
+        <Route path="/products/edit/:id" element={<Edit list={list} setList={setList}/>}/>
+        <Route path="*" element={<Navigate to ='/'/>}/>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
